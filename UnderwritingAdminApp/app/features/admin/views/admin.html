@@ -1,0 +1,43 @@
+<ul>
+	<li ng-repeat="engine in decisionEngines">
+		<form ng-submit="editExistingEngine(engine)">
+			<label for="minCredit">Mininum Credit</label>
+			<input name="minCredit" type="number" ng-model="engine.minCredit" />
+
+			<label for="minIncome">Mininum Income</label>
+			<input name="minIncome" type="number" ng-model="engine.minIncome" />			
+
+			<label for="maxDebt">Maximum Debt</label>
+			<input name="maxDebt" type="number" ng-model="engine.maxDebt" />			
+
+			<label for="minAssetPoints">Mininum Asset Points</label>
+			<input name="minAssetPoints" type="number" ng-model="engine.minAssetPoints" />	
+
+			<label for="maxAmount">Maximum Amount</label>
+			<input name="maxAmount" type="number" ng-model="engine.maxAmount" />
+
+			<input type="submit" value="Update">
+		</form>
+		<br><br>
+	</li>
+</ul>
+<br><br>
+<form ng-if="newEngine" ng-submit="saveNewEngine()">
+	<label for="minCredit">Mininum Credit</label>
+	<input name="minCredit" type="number" ng-model="newEngine.minCredit" />
+
+	<label for="minIncome">Mininum Income</label>
+	<input name="minIncome" type="number" ng-model="newEngine.minIncome" />			
+
+	<label for="maxDebt">Maximum Debt</label>
+	<input name="maxDebt" type="number" ng-model="newEngine.maxDebt" />			
+
+	<label for="minAssetPoints">Mininum Asset Points</label>
+	<input name="minAssetPoints" type="number" ng-model="newEngine.minAssetPoints" />	
+
+	<label for="maxAmount">Maximum Amount</label>
+	<input name="maxAmount" type="number" ng-model="newEngine.maxAmount" />
+
+	<input type="submit" value="Save">
+</form>
+<button ng-if="! newEngine" ng-click="createEngine()">Create New Engine</button>

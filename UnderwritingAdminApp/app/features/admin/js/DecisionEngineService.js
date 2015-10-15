@@ -1,6 +1,6 @@
 admin.factory('DecisionEngineService', ["$http", function($http) {
 	// currently tracked decision engines
-	var engines = {};
+	var engines = [];
 
 	// the defaul settings for a new decision engine
 	var engineDefaults = {
@@ -38,22 +38,43 @@ admin.factory('DecisionEngineService', ["$http", function($http) {
 	}
 
 	/**
+	 *	Get an engine by its id
+	 *  @param {Integer} id 	the engine's id
+	 */
+	function getEngineById(id) {
+		for(var i in engines) {
+			if(engines[i].id === id) {
+				return engines[i];
+			}
+		}
+
+		return 0;
+	}
+
+	/**
 	 *  Update the engine with the specified id (both locally and on the server)
 	 *
 	 *  If it is a new engine, it will be persisted after receiving a response from the server
 	 *  @params {DecisionEngine}	An engine to update
 	 */
 	function updateEngine(engine) {
+		var isNew = engine.id === 0;
+
 		$http({
-		  method: 'POST',
-  		  url: "app/features/admin/resources/DecisionEngineUpdate.json",
-  		  data: engines[id]
+		  method: 'GET',
+  		  url: "features/admin/resources/DecisionEngineUpdate.json",
+  		  data: engine
 		}).then(
 			function(response) {
-				engine.update(response.data);
-				if(engine.id !== 0) {
-					engines[engine.id] = engine;
+				var updated = response.data.DecisionEngine;
+
+				engine.update(updated);
+
+				if(isNew) {
+					engines.push(engine);
 				}
+
+				console.log(engines);
 			}
 		);
 	}
@@ -67,32 +88,11 @@ admin.factory('DecisionEngineService', ["$http", function($http) {
 	}
 
 	/**
-	 *	Add the passed engine (both locally and on the server)
-	 *  @param {DecisionEngine} engine 		the engine to add
-	 */
-	function addEngine(engine) {
-		$http({
-		  method: 'POST',
-  		  url: "app/features/admin/resources/DecisionEngineUpdate.json",
-  		  data: engine
-		}).then(
-			function(response) {
-				engine.update(response.data);
-				if(engine.id !== 0) {
-					engines[engine.id] = engine;
-				}
-			}
-		);
-	}
-
-	/**
 	 * Get the decision engines as an array
 	 * @return {Array} the currently tracked decision engines
 	 */
 	function getDecisionEngines() {
-		return Object(keys).map(function(x) {
-			return engines[x];
-		})
+		return engines;
 	}
 
 	/**
@@ -102,12 +102,12 @@ admin.factory('DecisionEngineService', ["$http", function($http) {
 	function removeEngine(id) {
 		$http({
 		  method: 'POST',
-  		  url: "app/features/admin/resources/RemoveDecisionEngine.json",
+  		  url: "features/admin/resources/RemoveDecisionEngine.json",
   		  data: id
 		}).then(
 			function(response) {
 				if(response.data.status === "success") {
-					delete engines[id];
+					//delete engines[id];
 				};
 			}
 		);
@@ -119,23 +119,25 @@ admin.factory('DecisionEngineService', ["$http", function($http) {
 	function importDecisionEngines() {
 		$http({
 		  method: 'GET',
-  		  url: "app/features/admin/resources/DecisionEngine.json"
+  		  url: "features/admin/resources/DecisionEngine.json"
 		}).then(
 			function(response) {
-				engines = {};
+				engines = [];
 				var responseEngines = response.data.DecisionEngine;
 				for(var i in responseEngines) {
 					var engine = new DecisionEngine(responseEngines[i]);
-					engines[engine["id"]] = engine;
+					engines.push(engine);
 				}
 			}
 		);		
 	}
 
+	// import the decision engines
+	importDecisionEngines();
+
 	return {
 		getDecisionEngines : getDecisionEngines,
 		removeEngine : removeEngine,
-		addEngine: addEngine,
 		createEngine: createEngine,
 		updateEngine: updateEngine
 	};
