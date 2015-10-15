@@ -15,21 +15,22 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'underwritingClientAppApp.controllers',
+    //'underwritingClientAppApp.services'
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        templateUrl: 'features/application/views/loan-application.html',
+        controller: 'applicationCtrl',
       })
       .when('/about', {
-        templateUrl: 'views/about.html',
+        templateUrl: 'features/application/views/loan-application.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: 'features/application/views/loan-application.html'
       });
   });

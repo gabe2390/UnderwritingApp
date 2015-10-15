@@ -1,0 +1,59 @@
+<div class="container">
+      <h1>Loan Application</h1>
+      <form ng-submit="getInfo()">
+
+        <!-- Personal Details -->
+        <div id="person-details">
+        <fieldset>
+          First Name<input type="text" ng-model="user.firstName"><br>
+          Last Name<input type="text" ng-model="user.lastName"><br>
+          Age<input type="text" ng-model="user.age"><br>
+          Social Security Number<input type="text" ng-model="user.ssn"><br>
+          Male<input type="radio"  ng-model="user.gender" ng-value="true">
+          Female<input type="radio"  ng-model="user.gender" ng-value="false"><br>
+          Married<br>
+          Yes<input type="radio"  ng-model="user.married" ng-value="true">
+          No<input type="radio"  ng-model="user.married" ng-value="false"><br>  
+          Number of Dependents<input type="text" ng-model="user.dependents"><br>
+        </fieldset>
+
+        <!-- Financial Info FieldSet, includes jobs, debt, credit score and assets -->
+
+        <!-- Jobs Fieldset and Div -->
+        <fieldset>
+          <div id="all-jobs">
+            <div class="single-job" ng-repeat="job in jobs">
+              Industry:<select ng-model="job.industry" ng-options="job as job.label  for job in jobIndustry"></select>
+              Job Title<input type="text" ng-model="job.title">
+              Company<input type="text" ng-model="job.company">
+              Yearly Salary<input type="text" ng-model="job.income">
+            </div>
+            <button type= "button" ng-click="addJob()">Add Job</button><br>
+          </div>  </br>
+
+          Debt $<input type="text" ng-model="user.debt"><br>
+          Credit Score <input type="text" ng-model="user.creditscore"><br>
+         
+          <!-- Assets Divs -->
+          <div id= "all-assets">
+            <div class="singleAsset"  ng-repeat="asset in assets">
+              Assets<br> 
+                Type: <select ng-model="asset.type" ng-options="asset as asset.label  for asset in assetTypes"></select>
+                Name: <input type="text" ng-model="asset.name">
+                Value: <input type="text" ng-model="asset.value"><br>
+            </div>    
+            <button type=button ng-click="addAsset()">Add Asset</button>
+          </div>
+        </fieldset>
+
+        <!-- Loan reason, repayment term, and amount -->
+        <div class="loan-details">
+        Reason for Loan<input type="text" ng-model="reason"><br>
+        Repayment Term<input type="text" ng-model="repaymentTerm"><br>
+        Requested Amount<input type="text" ng-model="amount"><br>
+
+        <!-- Submit button -->
+        <input type="submit" value="Submit Application">  
+      </div>
+    </form>
+</div>
