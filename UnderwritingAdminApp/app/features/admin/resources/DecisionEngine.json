@@ -1,0 +1,20 @@
+{"DecisionEngine":[
+	{
+		"ID":"1",
+		"minCredit":"650",
+		"minIncome":"30000",
+		"maxDebt":"10000",
+		"minAssetPoints":"10",
+		"maxAmount":"40000"
+		},
+	{
+		"ID":"2",
+		"minCredit":"600",
+		"minIncome":"25000",
+		"maxDebt":"15000",
+		"minAssetPoints":"7",
+		"maxAmount":"25000"
+		}
+
+	]
+}
