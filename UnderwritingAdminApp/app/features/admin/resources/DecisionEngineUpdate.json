@@ -1,6 +1,6 @@
 {"DecisionEngine":[
 	{
-		"ID":"999",
+		"id":"999",
 		"minCredit":"99",
 		"minIncome":"999999",
 		"maxDebt":"99999",
