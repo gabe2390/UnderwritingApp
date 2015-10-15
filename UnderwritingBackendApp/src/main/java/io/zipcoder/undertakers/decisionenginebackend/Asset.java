@@ -8,7 +8,6 @@ public class Asset {
     private String type;
     private String name;
     private int value;
-    private int score;
 
     /**
      * Asset Constructor
@@ -50,7 +49,7 @@ public class Asset {
      * Calculate this asset's value based on its information
      * @return  Asset s
      */
-    public int calculateValue() {
+    public int calculateScore() {
         if(this.type.toLowerCase().equals("car")) {
             return (int) (.8 * this.value)/1000;
         }

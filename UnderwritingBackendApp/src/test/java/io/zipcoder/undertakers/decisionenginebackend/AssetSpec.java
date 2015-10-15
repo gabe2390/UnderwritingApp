@@ -41,7 +41,7 @@ public class AssetSpec {
 
     @Test
     public void testCalculateScoreDefault() {
-        assertEquals("calculateValue should return 4", this.value / 1000, this.asset.calculateValue());
+        assertEquals("calculateScore should return 4", this.value / 1000, this.asset.calculateScore());
     }
 
     @Test
@@ -49,6 +49,6 @@ public class AssetSpec {
         this.value = 20000;
         this.asset = new Asset("car", "Subaru", this.value);
 
-        assertEquals("calculateValue should return 16", (int) ((this.value * .8) / 1000), this.asset.calculateValue());
+        assertEquals("calculateScore should return 16", (int) ((this.value * .8) / 1000), this.asset.calculateScore());
     }
 }
