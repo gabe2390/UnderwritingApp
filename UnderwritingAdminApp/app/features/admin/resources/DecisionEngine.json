@@ -1,6 +1,6 @@
 {"DecisionEngine":[
 	{
-		"ID":"1",
+		"id":"1",
 		"minCredit":"650",
 		"minIncome":"30000",
 		"maxDebt":"10000",
@@ -8,7 +8,7 @@
 		"maxAmount":"40000"
 		},
 	{
-		"ID":"2",
+		"id":"2",
 		"minCredit":"600",
 		"minIncome":"25000",
 		"maxDebt":"15000",
