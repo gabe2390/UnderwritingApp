@@ -9,6 +9,13 @@ public class LoanResponse {
     int monthlyPayment;
     int repaymentTerm;
 
+    /**
+     * Constructor
+     * @param approved
+     * @param maxLoan
+     * @param monthlyPayment
+     * @param repaymentTerm
+     */
     public LoanResponse(boolean approved, int maxLoan, int monthlyPayment, int repaymentTerm) {
         this.approved = approved;
         this.maxLoan = maxLoan;
@@ -16,19 +23,14 @@ public class LoanResponse {
         this.repaymentTerm = repaymentTerm;
     }
 
-    public boolean getApproved(){
-        return approved;
-    }
+    /**
+     * Getters
+     */
+    public boolean getApproved() {return approved;}
 
-    public int getMaxLoan(){
-        return maxLoan;
-    }
+    public int getMaxLoan(){return maxLoan;}
 
-    public int getMonthlyPayment(){
-        return monthlyPayment;
-    }
+    public int getMonthlyPayment(){return monthlyPayment;}
 
-    public int getRepaymentTerm(){
-        return repaymentTerm;
-    }
+    public int getRepaymentTerm(){return repaymentTerm;}
 }
