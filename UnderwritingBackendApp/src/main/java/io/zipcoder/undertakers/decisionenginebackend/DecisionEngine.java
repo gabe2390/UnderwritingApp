@@ -25,13 +25,34 @@ public class DecisionEngine {
      * @param id                The id of this engine
      */
     public DecisionEngine(int minCredit, int minIncome, int maxDebt, int minAssetPoints, int id) {
+        this(minCredit, minIncome, maxDebt, minAssetPoints, id, (int) (Math.random()*490000)+10000);
+        if(this.maxAmount < 30000) {
+            // 3 years
+            this.term = 36;
+        }
+        else {
+            // 3 to 30 years
+            this.term = Math.min((this.maxAmount / 10000)*12, 360);
+        }
+    }
+
+    /**
+     * DecisionEngine constructor
+     * @param minCredit         The minimum credit allowed by this decision engine
+     * @param minIncome         The minimum income to qualify for this engine
+     * @param maxDebt           The maximum debt to qualify for this engine
+     * @param minAssetPoints    The minimum assets to qualify for this engine
+     * @param id                The id of this engine
+     * @param maxAmount         The maximum amount allowed for this loan
+     */
+    public DecisionEngine(int minCredit, int minIncome, int maxDebt, int minAssetPoints, int id, int maxAmount) {
         this.id = id;
         this.minCredit = minCredit;
         this.minIncome = minIncome;
         this.maxDebt = maxDebt;
         this.minAssetPoints = minAssetPoints;
+        this.maxAmount = maxAmount;
 
-        this.maxAmount = (int) (Math.random()*490000)+10000;
         if(this.maxAmount < 30000) {
             // 3 years
             this.term = 36;
