@@ -15,17 +15,18 @@ import static org.junit.Assert.assertEquals;
  */
 public class LoanAppSpec {
     LoanApp app;
-    List<DecisionEngine> engines = new ArrayList<>();
+    List<DecisionEngine> engines;
 
     LoanRequest request;
     LoanResponse response;
 
-    DecisionEngine trueEngine = mock(DecisionEngine.class);
-    DecisionEngine falseEngine = mock(DecisionEngine.class);
+    DecisionEngine trueEngine;
+    DecisionEngine falseEngine;
 
     @Before
     public void before(){
         this.request = mock(LoanRequest.class);
+        this.engines = new ArrayList<>();
         this.app = new LoanApp(this.engines, this.request);
 
         response = mock(LoanResponse.class);
