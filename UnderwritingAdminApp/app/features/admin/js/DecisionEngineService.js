@@ -59,22 +59,22 @@ admin.factory('DecisionEngineService', ["$http", function($http) {
 	 */
 	function updateEngine(engine) {
 		var isNew = engine.id === 0;
+		var method = isNew ? 'PUT' : 'PATCH';
 
 		$http({
-		  method: 'GET',
-  		  url: "features/admin/resources/DecisionEngineUpdate.json",
+		  method: method,
+  		  url: "http://localhost:8080/api/engine",
   		  data: engine
 		}).then(
 			function(response) {
-				var updated = response.data.DecisionEngine;
+				var updated = response.data;
+				console.log(updated);
 
 				engine.update(updated);
 
 				if(isNew) {
 					engines.push(engine);
 				}
-
-				console.log(engines);
 			}
 		);
 	}
@@ -103,7 +103,8 @@ admin.factory('DecisionEngineService', ["$http", function($http) {
 		$http({
 		  method: 'POST',
   		  url: "features/admin/resources/RemoveDecisionEngine.json",
-  		  data: id
+  		  data: id,
+  		  headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 		}).then(
 			function(response) {
 				if(response.data.status === "success") {
@@ -119,11 +120,12 @@ admin.factory('DecisionEngineService', ["$http", function($http) {
 	function importDecisionEngines() {
 		$http({
 		  method: 'GET',
-  		  url: "features/admin/resources/DecisionEngine.json"
+  		  url: "http://localhost:8080/api/engine"
 		}).then(
 			function(response) {
 				engines = [];
-				var responseEngines = response.data.DecisionEngine;
+				var responseEngines = response.data;
+				console.log(response);
 				for(var i in responseEngines) {
 					var engine = new DecisionEngine(responseEngines[i]);
 					engines.push(engine);

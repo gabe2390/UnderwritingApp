@@ -1,10 +1,15 @@
 package io.zipcoder.undertakers.decisionenginebackend;
 
+import java.util.ArrayList;
+
 /**
  * DecisionEngine
  * @author Gregory Furlong
  */
 public class DecisionEngine {
+    static ArrayList<DecisionEngine> engines = new ArrayList<DecisionEngine>();
+    static int nextId = 1;
+
     final public static int MAXIMUM_NON_HOUSE_LOAN = 50000;
 
     private int id;
@@ -15,6 +20,34 @@ public class DecisionEngine {
 
     private int maxAmount;
     private int term;
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setMinCredit(int minCredit) {
+        this.minCredit = minCredit;
+    }
+
+    public void setMinIncome(int minIncome) {
+        this.minIncome = minIncome;
+    }
+
+    public void setMaxDebt(int maxDebt) {
+        this.maxDebt = maxDebt;
+    }
+
+    public void setMinAssetPoints(int minAssetPoints) {
+        this.minAssetPoints = minAssetPoints;
+    }
+
+    public void setMaxAmount(int maxAmount) {
+        this.maxAmount = maxAmount;
+    }
+
+    public void setTerm(int term) {
+        this.term = term;
+    }
 
     /**
      * DecisionEngine constructor
@@ -62,6 +95,15 @@ public class DecisionEngine {
             this.term = Math.min((this.maxAmount / 10000)*12, 360);
         }
     }
+
+    /**
+     * Default Constructor
+     */
+    public DecisionEngine() {
+
+    }
+
+
 
     /**
      *  Calculate the monthly payment required to amortize a loan with the passed interest and amount
