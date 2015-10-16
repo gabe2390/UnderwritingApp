@@ -1,8 +1,8 @@
-<div ng-repeat="request in requests">
+<div ng-repeat="key in requests">
 	<div id="requestBlock">
 	<b>You have been approved for:</b>
-	<p>Loan Amount: {{request}}</p>
-	<p>Interest Rate: {{request.interestRate}}</p>
-	<p>Monthly Payment: {{request.monthlyPayment}}</p>
+	<p>Loan Amount: {{key.maxLoan}}</p>
+	<p>Interest Rate: {{key.interestRate}}</p>
+	<p>Monthly Payment: {{key.monthlyPayment}}</p>
 	<div>
 </div>

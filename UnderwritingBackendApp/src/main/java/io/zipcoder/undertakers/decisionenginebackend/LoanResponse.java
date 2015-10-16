@@ -23,6 +23,10 @@ public class LoanResponse {
         this.repaymentTerm = repaymentTerm;
     }
 
+    public LoanResponse(){
+
+    }
+
     /**
      * Getters
      */
