@@ -42,6 +42,50 @@ public class Person {
         this.assets = assets;
     }
 
+    public Person(){
+
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setSocial(String social) {
+        this.social = social;
+    }
+
+    public void setMale(boolean male) {
+        this.male = male;
+    }
+
+    public void setJobs(Job[] jobs) {
+        this.jobs = jobs;
+    }
+
+    public void setDependants(int dependants) {
+        this.dependants = dependants;
+    }
+
+    public void setMarried(boolean married) {
+        this.married = married;
+    }
+
+    public void setDebt(int debt) {
+        this.debt = debt;
+    }
+
+    public void setAssets(Asset[] assets) {
+        this.assets = assets;
+    }
+
     /**
      * Cycles through assets and calculates the Total Score
      * @return assetScore - total score of assets

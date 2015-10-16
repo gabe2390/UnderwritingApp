@@ -9,6 +9,23 @@ public class Asset {
     private String name;
     private int value;
 
+
+    public Asset() {
+    }
+
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
     /**
      * Asset Constructor
      * @param type      The type of asset

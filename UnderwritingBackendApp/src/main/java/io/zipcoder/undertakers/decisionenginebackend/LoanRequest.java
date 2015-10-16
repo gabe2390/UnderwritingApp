@@ -23,6 +23,10 @@ public class LoanRequest {
         this.applicant = applicant;
     }
 
+    public LoanRequest(){
+
+    }
+
 
     /**
      * Getters
@@ -32,4 +36,19 @@ public class LoanRequest {
     public int getRepaymentTerm(){return repaymentTerm; }
     public Person getApplicant(){return applicant;}
 
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    public void setRepaymentTerm(int repaymentTerm) {
+        this.repaymentTerm = repaymentTerm;
+    }
+
+    public void setApplicant(Person applicant) {
+        this.applicant = applicant;
+    }
 }

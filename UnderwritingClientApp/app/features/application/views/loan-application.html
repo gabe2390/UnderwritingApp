@@ -17,17 +17,20 @@
             <input class="col-md-5" type="text" ng-model="user.ssn" placeholder="Social Security"><br/>
             
           <div class="col-md-4" style="color:white; padding-top:10px; text-align:center">
-          <label>Male</label>
           <input type="radio"  ng-model="user.gender" ng-value="true">
-          <label>Female</label>
+          <label>Male</label>
+          
           <input type="radio"  ng-model="user.gender" ng-value="false">
+          <label>Female</label>
+          
           </div>
           <div class="col-md-4" style="color:white; padding-top:10px; text-align:center">
           <label>Married:</label>
-          Yes
           <input type="radio"  ng-model="user.married" ng-value="true">
-          No
+          Yes
           <input type="radio"  ng-model="user.married" ng-value="false">  
+          No
+          
            </div>
            
           <input class="col-md-2" style="margin-left:20px !important" type="text" ng-model="user.dependents" placeholder="# of Dependents">

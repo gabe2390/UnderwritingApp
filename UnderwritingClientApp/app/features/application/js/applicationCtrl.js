@@ -82,24 +82,24 @@ angular.module('underwritingClientAppApp.controllers',[])
 	    $scope.getInfo = function(){
 
 	    	var applicant={
-	    		"firstName":$scope.user.firstName,
-	    		"lastName":$scope.user.lastName,
-	    		"age":$scope.user.age,
-	    		"ssn":$scope.user.ssn,
-	    		"male":$scope.user.gender,
-	    		"jobs":$scope.jobs,
-	    		"dependents":$scope.user.dependents,
-	    		"married":$scope.user.married,
-	    		"debt":$scope.user.debt,
-	    		"creditscore":$scope.user.creditscore,
-	    		"assets":$scope.assets
+	    		firstName:$scope.user.firstName,
+	    		lastName:$scope.user.lastName,
+	    		age:$scope.user.age,
+	    		ssn:$scope.user.ssn,
+	    		male:$scope.user.gender,
+	    		jobs:$scope.jobs,
+	    		dependents:$scope.user.dependents,
+	    		married:$scope.user.married,
+	    		debt:$scope.user.debt,
+	    		creditscore:$scope.user.creditscore,
+	    		assets:$scope.assets
 	    	};
 
 	    	var request= {
-	    		"Person":applicant,
-	    		"reason": $scope.reason,
-	    		"repaymentTerm": $scope.repaymentTerm,
-	    		"amount": $scope.amount
+	    		applicant:applicant,
+	    		reason: $scope.reason,
+	    		repaymentTerm: $scope.repaymentTerm,
+	    		amount: $scope.amount
 	    	};
 
 			console.log(request);

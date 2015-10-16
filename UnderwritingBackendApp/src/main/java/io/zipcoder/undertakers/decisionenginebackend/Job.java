@@ -9,6 +9,25 @@ public class Job {
     private String company;
     private String type;
 
+    public Job() {
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public void setIncome(int income) {
+        this.income = income;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public Job(String position, int income, String company, String type){
         this.position = position;
         this.income = income;

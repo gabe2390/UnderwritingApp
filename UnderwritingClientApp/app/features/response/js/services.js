@@ -5,8 +5,12 @@ angular.module('underwritingClientAppApp.services', [])
 	url = 'http://127.0.0.1:8080/new'
 
 	function createRequest(request){
+		for(i in request.applicant.assets) {
+			request.applicant.assets[i].type = request.applicant.assets[i].type.value;
+		}
+
 		$http({
-			method: 'GET',
+			method: 'POST',
 			url: url,
 			data: request
 		}).then(function successCallback(output){
