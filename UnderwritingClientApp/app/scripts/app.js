@@ -17,7 +17,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'underwritingClientAppApp.controllers',
-    //'underwritingClientAppApp.services'
+    'underwritingClientAppApp.services'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -25,10 +25,9 @@ angular
         templateUrl: 'features/application/views/loan-application.html',
         controller: 'applicationCtrl',
       })
-      .when('/about', {
-        templateUrl: 'features/application/views/loan-application.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/response', {
+        templateUrl: 'features/response/views/response.html',
+        controller: 'ResponseCtrl'
       })
       .otherwise({
         redirectTo: 'features/application/views/loan-application.html'

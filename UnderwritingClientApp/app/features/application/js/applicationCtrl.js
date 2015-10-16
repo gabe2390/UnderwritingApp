@@ -1,6 +1,6 @@
 angular.module('underwritingClientAppApp.controllers',[])
 
-.controller("applicationCtrl", [ "$scope",  function($scope, Request){
+.controller("applicationCtrl", function($scope, Request, $window){
 
 		$scope.jobs=[];
 	    $scope.assets=[];
@@ -102,6 +102,8 @@ angular.module('underwritingClientAppApp.controllers',[])
 	    		"amount": $scope.amount
 	    	};
 
-	    	request.createRequest(request);
+			console.log(request);
+  			$scope.response = Request.createRequest(request);
+  			$window.location.href = '#/response';
 	    }
-}]);
+});
