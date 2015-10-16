@@ -16,6 +16,19 @@ public class Person {
     private int debt;
     private Asset[] assets;
 
+    /**
+     * Constructor for the person class
+     * @param firstName String
+     * @param lastName String
+     * @param age int
+     * @param social String (social security number)
+     * @param male boolean
+     * @param jobs Job[]
+     * @param dependants int
+     * @param married boolean
+     * @param debt int
+     * @param assets Asset[]
+     */
     public Person(String firstName, String lastName, int age, String social,boolean male,Job[] jobs,int dependants,boolean married,int debt,Asset[] assets){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -31,7 +44,7 @@ public class Person {
 
     /**
      * Cycles through assets and calculates the Total Score
-     * @return
+     * @return assetScore - total score of assets
      */
     public int getAssetScore(){
         int assetScore = 0;
@@ -43,7 +56,7 @@ public class Person {
 
     /**
      * Cycles through jobs and calculates total income
-     * @return
+     * @return totalIncome
      */
     public int getTotalIncome(){
         int totalIncome = 0;
@@ -53,6 +66,10 @@ public class Person {
         return totalIncome;
     }
 
+    /**
+     * assigns a random credit score depending on the person's age
+     * @return creditScore - randomized credit score
+     */
     public int lookupCreditScore(){
         int creditScore=0;
         if(age<=25){

@@ -8,7 +8,13 @@ import org.junit.Test;
  * Created by abrown on 10/15/15.
  */
 public class LoanRequestSpec {
-    Person person = new Person();
+    Job job = new Job("Developer", 99999999, "Sparks and friends", "Tech");
+    Job[] jobArray = {job};
+    Asset asset = new Asset("Car", "Ole' faithful", 27000);
+    Asset[] assetArray = {asset};
+    Person person = new Person("Rick", "Sparks", 26, "000-00-0000", true, jobArray,0, false, 1000,assetArray);
+
+
     LoanRequest loanRequest;
 
     @Before
