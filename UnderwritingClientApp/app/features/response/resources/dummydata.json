@@ -1,0 +1,20 @@
+{"data":[{
+		"approved": true,
+		"maxLoan": 100000,
+		"interestRate":1.07,
+		"monthlyPayment": 100.50
+	},
+	{
+		"approved": true,
+		"maxLoan": 100000,
+		"interestRate":3.07,
+		"monthlyPayment": 150.50
+	},
+	{
+		"approved": true,
+		"maxLoan": 100000,
+		"interestRate":6.07,
+		"monthlyPayment": 0.50
+	}
+]}
+
