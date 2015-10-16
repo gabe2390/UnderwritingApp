@@ -14,10 +14,20 @@ public class LoanApp {
 
     /**
      * Constructor instantiates fields, then calls method to generate responses
+     * @param request Request received from client side app
+     */
+    public LoanApp(LoanRequest request) {
+        this.engines = DecisionEngine.engines;
+        this.request = request;
+        responses = new ArrayList<>();
+    }
+
+    /**
+     * Constructor instantiates fields, then calls method to generate responses
      * @param engines List of Decision engines
      * @param request Request received from client side app
      */
-    public LoanApp(List<DecisionEngine> engines, LoanRequest request) {
+    public LoanApp(LoanRequest request, List<DecisionEngine> engines) {
         this.engines = engines;
         this.request = request;
         responses = new ArrayList<>();

@@ -8,7 +8,18 @@ import java.util.ArrayList;
  */
 public class DecisionEngine {
     static ArrayList<DecisionEngine> engines = new ArrayList<DecisionEngine>();
-    static int nextId = 1;
+    static int nextId = 2;
+
+    static {
+        engines.add(new DecisionEngine(
+            650,
+            50000,
+            100000,
+            1,
+            1,
+            75000
+        ));
+    }
 
     final public static int MAXIMUM_NON_HOUSE_LOAN = 50000;
 
@@ -20,34 +31,6 @@ public class DecisionEngine {
 
     private int maxAmount;
     private int term;
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setMinCredit(int minCredit) {
-        this.minCredit = minCredit;
-    }
-
-    public void setMinIncome(int minIncome) {
-        this.minIncome = minIncome;
-    }
-
-    public void setMaxDebt(int maxDebt) {
-        this.maxDebt = maxDebt;
-    }
-
-    public void setMinAssetPoints(int minAssetPoints) {
-        this.minAssetPoints = minAssetPoints;
-    }
-
-    public void setMaxAmount(int maxAmount) {
-        this.maxAmount = maxAmount;
-    }
-
-    public void setTerm(int term) {
-        this.term = term;
-    }
 
     /**
      * DecisionEngine constructor
@@ -224,4 +207,33 @@ public class DecisionEngine {
 
         return new LoanResponse(approved, maxAmount, monthPayment, repaymentTerm);
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setMinCredit(int minCredit) {
+        this.minCredit = minCredit;
+    }
+
+    public void setMinIncome(int minIncome) {
+        this.minIncome = minIncome;
+    }
+
+    public void setMaxDebt(int maxDebt) {
+        this.maxDebt = maxDebt;
+    }
+
+    public void setMinAssetPoints(int minAssetPoints) {
+        this.minAssetPoints = minAssetPoints;
+    }
+
+    public void setMaxAmount(int maxAmount) {
+        this.maxAmount = maxAmount;
+    }
+
+    public void setTerm(int term) {
+        this.term = term;
+    }
+
 }

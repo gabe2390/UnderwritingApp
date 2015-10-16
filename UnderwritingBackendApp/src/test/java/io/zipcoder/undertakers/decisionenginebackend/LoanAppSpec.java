@@ -27,7 +27,7 @@ public class LoanAppSpec {
     public void before(){
         this.request = mock(LoanRequest.class);
         this.engines = new ArrayList<>();
-        this.app = new LoanApp(this.engines, this.request);
+        this.app = new LoanApp(this.request, this.engines);
 
         response = mock(LoanResponse.class);
 
