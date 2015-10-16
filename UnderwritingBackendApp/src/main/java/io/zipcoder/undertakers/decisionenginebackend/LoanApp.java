@@ -29,7 +29,7 @@ public class LoanApp {
      */
     public void generateResponses() {
         for (DecisionEngine engine : engines) {
-            if (engine.isApproved()) {
+            if (engine.isApproved(this.request)) {
                 responses.add(engine.generateResponse(request));
             }
         }
