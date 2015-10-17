@@ -12,7 +12,7 @@
           
           
           
-            <input class="col-md-5"  type="text" ng-model="user.age" placeholder="Age">
+            <input class="col-md-5"  type="number" ng-model="user.age" placeholder="Age">
           
             <input class="col-md-5" type="text" ng-model="user.ssn" placeholder="Social Security"><br/>
             
@@ -45,14 +45,14 @@
                 <!--<select ng-model="job.industry" ng-options="job as job.label  for job in jobIndustry"></select>-->
               <input placeholder="Title" type="text" ng-model="job.title">
               <input placeholder="Company" type="text" ng-model="job.company">
-              <input placeholder="Salary" type="text" ng-model="job.income">
+              <input placeholder="Salary" type="number" ng-model="job.income">
             </div>
             <button id="jobButton" type= "button" ng-click="addJob()">Add Job</button><br>
           </div>  </br>
 
-          <input placeholder="Debt" class="col-md-5" type="text" ng-model="user.debt">
+          <input placeholder="Debt" class="col-md-5" type="number" ng-model="user.debt">
 
-          <input class="col-md-5"  type="text" ng-model="user.dependents" placeholder="# of Dependents">
+          <input class="col-md-5"  type="number" ng-model="user.dependents" placeholder="# of Dependents">
           
         
           
@@ -62,7 +62,7 @@
             <div class="singleAsset"  ng-repeat="asset in assets"> 
                 Type: <select ng-model="asset.type" ng-options="asset as asset.label  for asset in assetTypes"></select>
                 Name: <input type="text" ng-model="asset.name">
-                Value: <input type="text" ng-model="asset.value"><br>
+                Value: <input type="number" ng-model="asset.value"><br>
             </div>    
             <button id="jobButton" type=button ng-click="addAsset()">Add Asset</button>
           </div>
@@ -73,8 +73,8 @@
         <select class="col-md-5" ng-options="reason.label for reason in reasonTypes"  ng-model="reason">
           <option value="">---Please select Reason---</option>
         </select></br>
-        <input class="col-md-5" placeholder="Repayment Term" type="text" ng-model="repaymentTerm">
-        <input  style="width:560px" placeholder="Requested" type="text" ng-model="amount">
+        <input class="col-md-5" placeholder="Repayment Term" type="number" ng-model="repaymentTerm">
+        <input  style="width:560px" placeholder="Requested" type="number" ng-model="amount">
         </div>
         <!-- Submit button -->
         <div class="col-md-10" style="padding-top:60px">

@@ -121,8 +121,11 @@ angular.module('underwritingClientAppApp.controllers',[])
 	    		amount: $scope.amount
 	    	};
 
-			console.log(request);
   			$scope.response = Request.createRequest(request);
   			$window.location.href = '#/response';
 	    }
+
+	    // By default add a job and asset
+	    $scope.addAsset();
+	    $scope.addJob();
 });
