@@ -1,5 +1,5 @@
 <div class="container" >
-      <form ng-submit="getInfo()">
+      <form name="Application" ng-submit="getInfo()">
 
         <!-- Personal Details -->
         <div id="person-details" style="margin-left:40px;">
@@ -78,7 +78,8 @@
         </div>
         <!-- Submit button -->
         <div class="col-md-10" style="padding-top:60px">
-        <input type="submit"  id="submit-button"> <b>Submit</b> </input>
+        <input type="submit"  id="submit-button"> <b ng-disabled="Application.$invalid">Submit</b> </input>
+</form>
         </div>
       </div>
     </form>

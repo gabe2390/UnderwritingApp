@@ -18,6 +18,7 @@ angular.module('underwritingClientAppApp.services', [])
 		}).then(function successCallback(output){
 			response = output.data;
 			console.log(response)
+			console.log(response.length)
 			return response;
 		})
 	}
