@@ -1,15 +1,15 @@
-<div ng-repeat="key in requests">
+<div ng-repeat="key in responses">
 	<div id="requestBlock">
 	<b>You have been approved for:</b>
 	<p>Loan Amount: ${{key.maxLoan}}</p>
 	<p>Interest Rate: 4%</p>
 	<p>Monthly Payment: ${{key.monthlyPayment}}</p>
 	<p>Term: {{key.repaymentTerm}} months</p>
-	<div>
+	</div>
 </div>
-<div ng-if="requests.length===0">
+<div ng-if="responses.length === 0">
 	<div id="requestBlock">
-	<p>Sorry, you did not qualify.</p>
-	<p>Better luck next time!</p>
+		<p>Sorry, you did not qualify.</p>
+		<p>Better luck next time!</p>
 	</div>
 </div>

@@ -1,7 +1,7 @@
 angular.module('underwritingClientAppApp.services', [])
 
 .factory('Request',['$http', function($http){
-	response = {};
+	response = [];
 	url = 'http://127.0.0.1:8080/new'
 
 	function createRequest(request){
@@ -17,8 +17,6 @@ angular.module('underwritingClientAppApp.services', [])
 			data: request
 		}).then(function successCallback(output){
 			response = output.data;
-			console.log(response)
-			console.log(response.length)
 			return response;
 		})
 	}
@@ -27,10 +25,10 @@ angular.module('underwritingClientAppApp.services', [])
 		return response;
 	}
 		
-return {
-	createRequest: createRequest,
-	getResponses: getResponses
-};
+	return {
+		createRequest: createRequest,
+		getResponses: getResponses
+	};
 
 }])
 
