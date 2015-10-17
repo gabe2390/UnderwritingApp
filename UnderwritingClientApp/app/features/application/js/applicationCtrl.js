@@ -41,6 +41,25 @@ angular.module('underwritingClientAppApp.controllers',[])
 	    	label: 'Bonds'
 	    }];
 
+
+	    //set up reason option menu
+	    $scope.reasonTypes = [{
+	    	value:'House',
+	    	label: 'House'
+	    },{
+	    	value:'Car',
+	    	label: 'Car'
+	    },{
+	    	value:'School',
+	    	label: 'School'
+	    },{
+	    	value:'Business',
+	    	label: 'Business'
+	    },{
+	    	value:'Other',
+	    	label:'Other'
+	    }]
+
         /**
 	    *	Template for a Job object
 	    **/

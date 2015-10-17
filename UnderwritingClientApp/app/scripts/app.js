@@ -29,6 +29,11 @@ angular
         templateUrl: 'features/response/views/response.html',
         controller: 'ResponseCtrl'
       })
+      .when('/about', {
+        templateUrl: 'views/about.html',
+        controller: 'AboutCtrl',
+        controllerAs: 'about'
+      })
       .otherwise({
         redirectTo: 'features/application/views/loan-application.html'
       });

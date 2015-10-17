@@ -16,7 +16,7 @@
           
             <input class="col-md-5" type="text" ng-model="user.ssn" placeholder="Social Security"><br/>
             
-          <div class="col-md-4" style="color:white; padding-top:10px; text-align:center">
+          <div class="col-md-5" style="color:white; padding-top:10px; text-align:center">
           <input type="radio"  ng-model="user.gender" ng-value="true">
           <label>Male</label>
           
@@ -24,7 +24,8 @@
           <label>Female</label>
           
           </div>
-          <div class="col-md-4" style="color:white; padding-top:10px; text-align:center">
+
+          <div class="col-md-5" style="color:white; padding-top:10px; text-align:center">
           <label>Married:</label>
           <input type="radio"  ng-model="user.married" ng-value="true">
           Yes
@@ -32,9 +33,7 @@
           No
           
            </div>
-           
-          <input class="col-md-2" style="margin-left:20px !important" type="text" ng-model="user.dependents" placeholder="# of Dependents">
-        
+          
         </fieldset>
 
         <!-- Financial Info FieldSet, includes jobs, debt, credit score and assets -->
@@ -52,7 +51,11 @@
           </div>  </br>
 
           <input placeholder="Debt" class="col-md-5" type="text" ng-model="user.debt">
-          <input placeholder="Credit Score" class="col-md-5" type="text" ng-model="user.creditscore"><br>
+
+          <input class="col-md-5"  type="text" ng-model="user.dependents" placeholder="# of Dependents">
+          
+        
+          
          
           <!-- Assets Divs -->
           <div id= "all-assets" class="col-md-12">
@@ -67,7 +70,9 @@
 
         <!-- Loan reason, repayment term, and amount -->
         
-        <input class="col-md-5" placeholder="Reason" type="text" ng-model="reason">
+        <select class="col-md-5" ng-options="reason.label for reason in reasonTypes"  ng-model="reason">
+          <option value="">---Please select Reason---</option>
+        </select></br>
         <input class="col-md-5" placeholder="Repayment Term" type="text" ng-model="repaymentTerm">
         <input  style="width:560px" placeholder="Requested" type="text" ng-model="amount">
         </div>

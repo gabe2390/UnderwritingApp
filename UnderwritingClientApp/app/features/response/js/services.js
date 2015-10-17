@@ -9,6 +9,8 @@ angular.module('underwritingClientAppApp.services', [])
 			request.applicant.assets[i].type = request.applicant.assets[i].type.value;
 		}
 
+		request.reason = request.reason.value;
+
 		$http({
 			method: 'POST',
 			url: url,
