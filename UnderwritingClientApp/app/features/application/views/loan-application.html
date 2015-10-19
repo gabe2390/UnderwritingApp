@@ -70,7 +70,7 @@
 
         <!-- Loan reason, repayment term, and amount -->
         
-        <select class="col-md-5" ng-options="reason.label for reason in reasonTypes"  ng-model="reason">
+        <select id="reasonSelect" class="col-md-5" ng-options="reason.label for reason in reasonTypes"  ng-model="reason">
           <option value="">---Please select Reason---</option>
         </select></br>
         <input class="col-md-5" placeholder="Repayment Term" type="number" ng-model="repaymentTerm">
